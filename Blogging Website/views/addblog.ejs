@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Add Blog</title>
+    <%- include('./partials/style.ejs') %>
+</head>
+<body>
+   <%- include('./partials/nav.ejs') %>
+    <div class="container mt-3">
+        <form action="/blog" method="post" enctype="multipart/form-data">
+            <div class="mb-3">
+                <label for="title" class="form-label">
+                   Upload File
+                </label>
+                <input type="file" class="form-control" name="coverImage" id="coverImage" aria-describedby="title">
+            </div>
+            <div class="mb-3">
+                <label for="title" class="form-label">
+                    Title
+                </label>
+                <input type="text" placeholder="Enter Title" class="form-control" name="title" id="title" aria-describedby="title">
+            </div>
+            <div class="mb-3">
+                <label for="body" class="form-label">
+                    Body
+                </label>
+                <textarea class="form-control" placeholder="Enter Some Content....." name="body" id="body"></textarea>
+            </div>
+            <div class="d-grid">
+
+                <button class="btn btn-primary btn-block btn-block">Submit</button>
+            </div>
+        </form>
+    </div>
+    <%- include('./partials/script.ejs') %>
+  </body>
+</html> 

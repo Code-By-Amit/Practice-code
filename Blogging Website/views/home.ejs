@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Blogify || Home</title>
+  <%- include('./partials/style.ejs') %>
+</head>
+
+<body>
+  <%- include('./partials/nav.ejs') %>
+
+    <div class="container mt-3">
+
+      <div class="row row-cols-3">
+        <% blogs.forEach(blog=> { %>
+          <div class="col">
+            <div class="card col" style="width: 18rem;">
+              <img src="/uploads/<%= blog.coverImageURL %>" class="card-img-top" alt="Image not rendering">
+              <div class="card-body">
+                <h5 class="card-title">
+                  <%= blog.title %>
+                </h5>
+                <a href="/blog/<%= blog._id %>" class="btn btn-primary">view</a>
+              </div>
+            </div>
+          </div>
+          <% }) %>
+      </div>
+    </div>
+
+
+    <%- include('./partials/script.ejs') %>
+</body>
+
+</html>
+
+
